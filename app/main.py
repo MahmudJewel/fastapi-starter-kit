@@ -1,10 +1,13 @@
+# fastapi 
 from fastapi import FastAPI
 
-from app.api.routers.user import user_router
-
+# sqlalchemy 
 from sqladmin import Admin, ModelView
+
+from app.api.routers.user import user_router
 from app.core.database import engine
-from app.models.user import User
+from app.models.admin import UserAdmin
+
 
 app = FastAPI()
 
@@ -15,9 +18,9 @@ async def read_home_page():
 
 app.include_router(user_router)
 
+# ===========admin ===============
 admin = Admin(app, engine)
-class UserAdmin(ModelView, model=User):
-    column_list = [User.id, User.email]
-
 admin.add_view(UserAdmin)
+
+
 
