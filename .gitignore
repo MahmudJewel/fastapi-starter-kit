@@ -2,5 +2,6 @@ __pycache__
 .env
 venv
 doc.odt
-
+sqlite.db
+alembic
 
