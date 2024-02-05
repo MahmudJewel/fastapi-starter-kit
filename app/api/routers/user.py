@@ -17,5 +17,3 @@ user_router.include_router(
     tags=["auth"],
     responses={404: {"description": "Not found"}},
 )
-
-

@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from datetime import datetime
+from typing import Optional
 from app.models.user import UserRole
 
 class UserBase(BaseModel):
@@ -8,8 +9,10 @@ class UserBase(BaseModel):
 class UserCreate(UserBase):
 	password: str
 
-class User(UserCreate):
+class User(UserBase):
 	id: int
+	first_name: Optional[str]
+	last_name: Optional[str]
 	is_active: bool
 	role: UserRole or None
 	created_at: datetime

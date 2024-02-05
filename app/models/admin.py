@@ -1,19 +1,16 @@
-from fastapi import APIRouter, FastAPI
-from sqladmin import Admin, ModelView
-from app.core.database import engine
+from sqladmin import ModelView
 from app.models.user import User
 
 
 class UserAdmin(ModelView, model=User):
     column_list = [
-        User.id, 
+        User.id,
+        User.first_name,
+        User.last_name,
         User.email,
         User.password,
         User.is_active,
         User.role,
         User.created_at,
-        User.updated_at
-        ]
-
-
-
+        User.updated_at,
+    ]

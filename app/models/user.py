@@ -4,8 +4,7 @@ from app.core.database import Base
 from .common import CommonModel
 
 class UserRole(str, PythonEnum):
-	customer = "customer"
-	vendor = "vendor"
+	user = "user"
 	admin = "admin"
 
 class User(CommonModel):
@@ -13,6 +12,9 @@ class User(CommonModel):
 
 	email = Column(String, unique=True, index=True)
 	password = Column(String)
-	role = Column(Enum(UserRole), default=UserRole.customer)
+	first_name = Column(String, nullable=True)
+	last_name = Column(String, nullable=True)
+	role = Column(Enum(UserRole), default=UserRole.user)
 
 metadata = Base.metadata
+
