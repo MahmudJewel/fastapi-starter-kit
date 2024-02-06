@@ -7,6 +7,11 @@ class UserBase(BaseModel):
 	email: str
 
 class UserCreate(UserBase):
+	first_name: Optional[str]
+	last_name: Optional[str]
+	password: str
+
+class UserLogin(UserBase):
 	password: str
 
 class User(UserBase):
@@ -21,6 +26,8 @@ class User(UserBase):
 		orm_mode = True
 
 class UserUpdate(BaseModel):
+	first_name: Optional[str]
+	last_name: Optional[str]
 	is_active: bool
 	role: UserRole or None
 

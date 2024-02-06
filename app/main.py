@@ -4,7 +4,7 @@ from fastapi import FastAPI
 # sqlalchemy
 from sqladmin import Admin, ModelView
 
-from app.api.routers.user import user_router
+from app.api.routers.api import router
 from app.core.database import engine
 from app.models.admin import UserAdmin
 
@@ -17,7 +17,7 @@ async def read_home_page():
     return {"msg": "Initialization done"}
 
 
-app.include_router(user_router)
+app.include_router(router)
 
 # ===========admin ===============
 admin = Admin(app, engine)

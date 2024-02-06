@@ -7,7 +7,7 @@ from datetime import timedelta
 from sqlalchemy.orm import Session
 
 # import
-from app.schemas.user import User, UserCreate, Token
+from app.schemas.user import User, UserLogin, Token
 from app.core.dependencies import get_db
 from app.core.settings import ACCESS_TOKEN_EXPIRE_MINUTES
 from app.api.endpoints.user import functions as user_functions
@@ -19,7 +19,7 @@ auth_module = APIRouter()
 # getting access token for login 
 @auth_module.post("/login", response_model= Token)
 async def login_for_access_token(
-    user: UserCreate,
+    user: UserLogin,
     db: Session = Depends(get_db)
 ) -> Token:
     member = user_functions.authenticate_user(db, user=user)
