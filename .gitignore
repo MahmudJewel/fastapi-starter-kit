@@ -3,6 +3,5 @@ __pycache__
 venv
 doc.odt
 sqlite.db
-alembic
 doc.odt
 
