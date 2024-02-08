@@ -58,7 +58,7 @@ def delete_user(db: Session, user_id: int):
     db.delete(db_user)
     db.commit()
     # db.refresh(db_user)
-    return db_user
+    return {"msg": f"{db_user.email} deleted successfully"}
 
 # =====================> login/logout <============================
 def verify_password(plain_password, hashed_password):

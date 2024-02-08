@@ -52,10 +52,10 @@ async def update_user( user_id: int, user: UserUpdate, db: Session = Depends(get
 
 # delete user
 @user_module.delete('/{user_id}', 
-               response_model=User,
+            #    response_model=User,
             #    dependencies=[Depends(RoleChecker(['admin']))]
                )
-async def update_user( user_id: int, db: Session = Depends(get_db)):
+async def delete_user( user_id: int, db: Session = Depends(get_db)):
     return user_functions.delete_user(db, user_id)
 
 
