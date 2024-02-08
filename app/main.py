@@ -1,45 +1,18 @@
 # fastapi
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-
-# sqlalchemy
-from sqladmin import Admin, ModelView
-
-from app.api.routers.api import router
-from app.core.database import engine
-from app.models.admin import UserAdmin
+from app.core.modules import init_routers, make_middleware
 
 
-app = FastAPI(
-    title="FastAPI starter kit",
-    description="FastAPI starter kit for every fastAPI project by Mahmud",
-    version="1.0.0",
-)
-
-origins = [
-	# "http://localhost.tiangolo.com",
-	# "https://localhost.tiangolo.com",
-	# "http://localhost",
-	# "http://localhost:8080",
-    "*"
-]
-
-app.add_middleware(
-	CORSMiddleware,
-	allow_origins=origins,
-	allow_credentials=True,
-	allow_methods=["*"],
-	allow_headers=["*"],
-)
+def create_app() -> FastAPI:
+    app_ = FastAPI(
+        title="FastAPI starter kit",
+        description="FastAPI starter kit that is needed for every fastapi project. The repo is developed with 💗 by mahmud.",
+        version="1.0.0",
+        # dependencies=[Depends(Logging)],
+        middleware=make_middleware(),
+    )
+    init_routers(app_=app_)
+    return app_
 
 
-@app.get("/")
-async def read_home_page():
-    return {"msg": "Initialization done"}
-
-
-app.include_router(router)
-
-# ===========admin ===============
-admin = Admin(app, engine)
-admin.add_view(UserAdmin)
+app = create_app()
