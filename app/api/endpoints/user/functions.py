@@ -30,7 +30,7 @@ def get_user_by_id(db: Session, user_id: int):
 # crete new user 
 def create_new_user(db: Session, user: UserCreate):
     hashed_password = pwd_context.hash(user.password)
-    new_user = UserModel.User(email=user.email, password=hashed_password)
+    new_user = UserModel.User(email=user.email, password=hashed_password, first_name=user.first_name, last_name=user.last_name)
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
