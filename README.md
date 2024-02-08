@@ -92,7 +92,10 @@ session operates in a virtual environment set up by `virtualenv2`.
 
 Once `pip` has finished downloading the dependencies:
 ```sh
+# db migrations
 (venv)$ alembic upgrade head
+
+# start the server 
 (venv)$ uvicorn app.main:app --reload
 ```
 
