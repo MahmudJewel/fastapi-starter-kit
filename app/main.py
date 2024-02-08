@@ -10,7 +10,11 @@ from app.core.database import engine
 from app.models.admin import UserAdmin
 
 
-app = FastAPI()
+app = FastAPI(
+    title="FastAPI starter kit",
+    description="FastAPI starter kit for every fastAPI project by Mahmud",
+    version="1.0.0",
+)
 
 origins = [
 	# "http://localhost.tiangolo.com",
