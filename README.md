@@ -100,15 +100,15 @@ Once `pip` has finished downloading the dependencies:
 ```
 
 ## User module's API
-| SRL | METHOD | ROUTE | FUNCTIONALITY | Required Fields | 
+| SRL | METHOD | ROUTE | FUNCTIONALITY | Fields | 
 | ------- | ------- | ----- | ------------- | ------------- |
-| *1* | *POST* | ```/login``` | _Login user_| _email, password_|
-| *2* | *POST* | ```/users/``` | _Create new user_|_email, password_|
-| *3* | *GET* | ```/users/``` | _Get all users list_|_None_|
-| *4* | *GET* | ```/users/me/``` | _Get current user details_|_None_|
-| *5* | *GET* | ```/users/{user_id}``` | _Get indivisual users details_|_None_|
+| *1* | *POST* | ```/login``` | _Login user_| _**email**, **password**_|
+| *2* | *POST* | ```/users/``` | _Create new user_|_**email**, **password**, first name, last name_|
+| *3* | *GET* | ```/users/``` | _Get all users list_|_email, password, first name, last name, role, is_active, created_at, updated_at, id_|
+| *4* | *GET* | ```/users/me/``` | _Get current user details_|_email, password, first name, last name, role, is_active, created_at, updated_at, id_|
+| *5* | *GET* | ```/users/{user_id}``` | _Get indivisual users details_|_email, password, first name, last name, role, is_active, created_at, updated_at, id_|
 | *6* | *PATCH* | ```/users/{user_id}``` | _Update the user partially_|_email, password, is_active, role_|
-| *7* | *DELETE* | ```/users/{user_id}``` | _Delete the user_|_None_| _admin_|
+| *7* | *DELETE* | ```/users/{user_id}``` | _Delete the user_|_None_|
 | *8* | *GET* | ```/``` | _Home page_|_None_|
 | *9* | *GET* | ```/admin``` | _Admin Dashboard_|_None_|
 
