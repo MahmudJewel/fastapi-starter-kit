@@ -7,8 +7,8 @@ class UserBase(BaseModel):
 	email: str
 
 class UserCreate(UserBase):
-	first_name: Optional[str]
-	last_name: Optional[str]
+	first_name: str | None = None
+	last_name: str | None = None
 	password: str
 
 class UserLogin(UserBase):
@@ -26,10 +26,10 @@ class User(UserBase):
 		from_attributes = True
 
 class UserUpdate(BaseModel):
-	first_name: Optional[str]
-	last_name: Optional[str]
-	is_active: bool
-	role: UserRole or None
+	first_name: str | None = None
+	last_name: str | None = None
+	is_active: bool | None = None
+	role: UserRole or None = None
 
 class Token(BaseModel):
     access_token: str
