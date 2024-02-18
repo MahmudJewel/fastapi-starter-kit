@@ -16,5 +16,8 @@ class User(CommonModel):
 	last_name = Column(String, nullable=True)
 	role = Column(Enum(UserRole), default=UserRole.user)
 
+	def __repr__(self):
+		return f"{self.email}"
+	
 metadata = Base.metadata
 
