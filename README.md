@@ -1,4 +1,7 @@
 # FastAPI Starter Kit
+[![Fork](https://img.shields.io/github/forks/MahmudJewel/fastapi-starter-kit.svg?style=social&label=Fork)](https://github.com/MahmudJewel/fastapi-starter-kit/fork)  
+[Click here to fork the repository](https://github.com/MahmudJewel/fastapi-starter-kit/fork)
+
 ## Features:
 * FastAPI project structure tree
 * user module
@@ -38,7 +41,7 @@
 │   │   ├── common.py
 │   │   ├── __init__.py
 │   │   └── user.py
-│   ├── schemas
+│   ├── schemas   # Pydantic model for data validation
 │   │   ├── __init__.py
 │   │   └── user.py
 │   └── utils       # Can include utility functions that are used across different features.
