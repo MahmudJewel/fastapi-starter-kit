@@ -1,19 +1,35 @@
 # FastAPI Starter Kit
-[![Fork](https://img.shields.io/github/forks/MahmudJewel/fastapi-starter-kit.svg?style=social&label=Fork)](https://github.com/MahmudJewel/fastapi-starter-kit/fork)
+<p>
+    <a href="https://github.com/MahmudJewel/fastapi-starter-kit/fork">
+        <img src="https://img.shields.io/github/forks/MahmudJewel/fastapi-starter-kit.svg?style=social&label=Fork" />
+    </a>
+    <a href="https://github.com/MahmudJewel/fastapi-starter-kit/fork">
+        <img src="https://img.shields.io/github/stars/MahmudJewel/fastapi-starter-kit.svg?style=social&label=Stars" />
+    </a>
+    <a href="https://github.com/MahmudJewel/fastapi-starter-kit/fork">
+        <img src="https://img.shields.io/nuget/dt/Azylee.Core.svg" />
+    </a>
+</p>
+<a href="https://github.com/MahmudJewel/fastapi-starter-kit/fork">
+    Click here to download/fork the repository
+</a>
+
+<!-- [![Fork](https://img.shields.io/github/forks/MahmudJewel/fastapi-starter-kit.svg?style=social&label=Fork)](https://github.com/MahmudJewel/fastapi-starter-kit/fork)
 [![Stars](https://img.shields.io/github/stars/MahmudJewel/fastapi-starter-kit.svg?style=social&label=Stars)](https://github.com/MahmudJewel/fastapi-starter-kit)
-[![NuGet](https://img.shields.io/nuget/dt/Azylee.Core.svg)](https://www.nuget.org/packages/Azylee.Core)    
-[Click here to fork the repository](https://github.com/MahmudJewel/fastapi-starter-kit/fork)
+[![NuGet](https://img.shields.io/nuget/dt/Azylee.Core.svg)](https://www.nuget.org/packages/Azylee.Core)   -->
 
 ## Features:
-* FastAPI project structure tree
-* user module
-    - id, first name, last name, **email** as username, **password**, role, is_active created_at, updated_at 
-* admin dashboard => sqladmin
-* authentication => JWT
-* db migration => alembic
-* CORS middleware
+
+- FastAPI project structure tree
+- user module
+  - id, first name, last name, **email** as username, **password**, role, is_active created_at, updated_at
+- admin dashboard => sqladmin
+- authentication => JWT
+- db migration => alembic
+- CORS middleware
 
 ## Structured Tree
+
 ```sh
 ├── alembic     # Manages database migrations
 ├── alembic.ini
@@ -31,7 +47,7 @@
 │   │       ├── api.py
 │   │       ├── __init__.py
 │   │       └── user.py
-│   ├── core    # Contains core functionality like database management, dependencies, etc. 
+│   ├── core    # Contains core functionality like database management, dependencies, etc.
 │   │   ├── database.py
 │   │   ├── dependencies.py
 │   │   ├── __init__.py
@@ -49,6 +65,7 @@
 │   └── utils       # Can include utility functions that are used across different features.
 ├── requirements.txt # Lists project dependencies.
 ```
+
 **app/api/endpoints/**: Contains modules for each feature (user, product, payments).
 
 **app/api/routers/**: Contains FastAPI routers, where each router corresponds to a feature.
@@ -71,20 +88,24 @@
 
 **requirements.txt**: Lists project dependencies.
 
-
 # Setup
+
 The first thing to do is to clone the repository:
+
 ```sh
 $ https://github.com/MahmudJewel/fastapi-starter-kit
 ```
 
 Create a virtual environment to install dependencies in and activate it:
+
 ```sh
 $ cd fastapi-starter-kit
 $ python -m venv venv
 $ source venv/bin/activate
 ```
+
 Then install the dependencies:
+
 ```sh
 # for fixed version
 (venv)$ pip install -r requirements.txt
@@ -92,48 +113,55 @@ Then install the dependencies:
 # or for updated version
 (venv)$ pip install -r dev.txt
 ```
+
 Note the `(venv)` in front of the prompt. This indicates that this terminal
 session operates in a virtual environment set up by `virtualenv2`.
 
 Once `pip` has finished downloading the dependencies:
+
 ```sh
 # db migrations
 (venv)$ alembic upgrade head
 
-# start the server 
+# start the server
 (venv)$ uvicorn app.main:app --reload
 ```
 
 ## User module's API
-| SRL | METHOD | ROUTE | FUNCTIONALITY | Fields | 
-| ------- | ------- | ----- | ------------- | ------------- |
-| *1* | *POST* | ```/login``` | _Login user_| _**email**, **password**_|
-| *2* | *POST* | ```/users/``` | _Create new user_|_**email**, **password**, first name, last name_|
-| *3* | *GET* | ```/users/``` | _Get all users list_|_email, password, first name, last name, role, is_active, created_at, updated_at, id_|
-| *4* | *GET* | ```/users/me/``` | _Get current user details_|_email, password, first name, last name, role, is_active, created_at, updated_at, id_|
-| *5* | *GET* | ```/users/{user_id}``` | _Get indivisual users details_|_email, password, first name, last name, role, is_active, created_at, updated_at, id_|
-| *6* | *PATCH* | ```/users/{user_id}``` | _Update the user partially_|_email, password, is_active, role_|
-| *7* | *DELETE* | ```/users/{user_id}``` | _Delete the user_|_None_|
-| *8* | *GET* | ```/``` | _Home page_|_None_|
-| *9* | *GET* | ```/admin``` | _Admin Dashboard_|_None_|
 
+| SRL | METHOD   | ROUTE              | FUNCTIONALITY                  | Fields                                                                                |
+| --- | -------- | ------------------ | ------------------------------ | ------------------------------------------------------------------------------------- |
+| _1_ | _POST_   | `/login`           | _Login user_                   | _**email**, **password**_                                                             |
+| _2_ | _POST_   | `/users/`          | _Create new user_              | _**email**, **password**, first name, last name_                                      |
+| _3_ | _GET_    | `/users/`          | _Get all users list_           | _email, password, first name, last name, role, is_active, created_at, updated_at, id_ |
+| _4_ | _GET_    | `/users/me/`       | _Get current user details_     | _email, password, first name, last name, role, is_active, created_at, updated_at, id_ |
+| _5_ | _GET_    | `/users/{user_id}` | _Get indivisual users details_ | _email, password, first name, last name, role, is_active, created_at, updated_at, id_ |
+| _6_ | _PATCH_  | `/users/{user_id}` | _Update the user partially_    | _email, password, is_active, role_                                                    |
+| _7_ | _DELETE_ | `/users/{user_id}` | _Delete the user_              | _None_                                                                                |
+| _8_ | _GET_    | `/`                | _Home page_                    | _None_                                                                                |
+| _9_ | _GET_    | `/admin`           | _Admin Dashboard_              | _None_                                                                                |
 
 # Tools
+
 ### Back-end
+
 #### Language:
-	Python
+
+    Python
 
 #### Frameworks:
-	FastAPI
+
+    FastAPI
     pydantic
-	
+
 #### Other libraries / tools:
-	SQLAlchemy
+
+    SQLAlchemy
     starlette
     uvicorn
     python-jose
     alembic
 
 # Happy Coding
-## From ==> Mahmud
 
+## From ==> Mahmud
