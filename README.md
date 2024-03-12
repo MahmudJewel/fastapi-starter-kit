@@ -1,5 +1,7 @@
 # FastAPI Starter Kit
-[![Fork](https://img.shields.io/github/forks/MahmudJewel/fastapi-starter-kit.svg?style=social&label=Fork)](https://github.com/MahmudJewel/fastapi-starter-kit/fork)  
+[![Fork](https://img.shields.io/github/forks/MahmudJewel/fastapi-starter-kit.svg?style=social&label=Fork)](https://github.com/MahmudJewel/fastapi-starter-kit/fork)
+[![Stars](https://img.shields.io/github/stars/MahmudJewel/fastapi-starter-kit.svg?style=social&label=Stars)](https://github.com/MahmudJewel/fastapi-starter-kit)
+[![NuGet](https://img.shields.io/nuget/dt/Azylee.Core.svg)](https://www.nuget.org/packages/Azylee.Core)    
 [Click here to fork the repository](https://github.com/MahmudJewel/fastapi-starter-kit/fork)
 
 ## Features:
