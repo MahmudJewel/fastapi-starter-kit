@@ -136,14 +136,15 @@ Once `pip` has finished downloading the dependencies:
 | SRL | METHOD   | ROUTE              | FUNCTIONALITY                  | Fields                                                                                |
 | --- | -------- | ------------------ | ------------------------------ | ------------------------------------------------------------------------------------- |
 | _1_ | _POST_   | `/login`           | _Login user_                   | _**email**, **password**_                                                             |
-| _2_ | _POST_   | `/users/`          | _Create new user_              | _**email**, **password**, first name, last name_                                      |
-| _3_ | _GET_    | `/users/`          | _Get all users list_           | _email, password, first name, last name, role, is_active, created_at, updated_at, id_ |
-| _4_ | _GET_    | `/users/me/`       | _Get current user details_     | _email, password, first name, last name, role, is_active, created_at, updated_at, id_ |
-| _5_ | _GET_    | `/users/{user_id}` | _Get indivisual users details_ | _email, password, first name, last name, role, is_active, created_at, updated_at, id_ |
-| _6_ | _PATCH_  | `/users/{user_id}` | _Update the user partially_    | _email, password, is_active, role_                                                    |
-| _7_ | _DELETE_ | `/users/{user_id}` | _Delete the user_              | _None_                                                                                |
-| _8_ | _GET_    | `/`                | _Home page_                    | _None_                                                                                |
-| _9_ | _GET_    | `/admin`           | _Admin Dashboard_              | _None_                                                                                |
+| _2_ | _POST_   | `/refresh/?refresh_token=`           | _Refresh access token_|_None_ 
+| _3_ | _POST_   | `/users/`          | _Create new user_              | _**email**, **password**, first name, last name_                                      |
+| _4_ | _GET_    | `/users/`          | _Get all users list_           | _email, password, first name, last name, role, is_active, created_at, updated_at, id_ |
+| _5_ | _GET_    | `/users/me/`       | _Get current user details_     | _email, password, first name, last name, role, is_active, created_at, updated_at, id_ |
+| _6_ | _GET_    | `/users/{user_id}` | _Get indivisual users details_ | _email, password, first name, last name, role, is_active, created_at, updated_at, id_ |
+| _7_ | _PATCH_  | `/users/{user_id}` | _Update the user partially_    | _email, password, is_active, role_                                                    |
+| _8_ | _DELETE_ | `/users/{user_id}` | _Delete the user_              | _None_                                                                                |
+| _9_ | _GET_    | `/`                | _Home page_                    | _None_                                                                                |
+| _10_ | _GET_    | `/admin`           | _Admin Dashboard_              | _None_                                                                                |
 
 # Tools
 
