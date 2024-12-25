@@ -128,7 +128,9 @@ Once `pip` has finished downloading the dependencies:
 (venv)$ alembic upgrade head
 
 # start the server
-(venv)$ uvicorn app.main:app --reload
+(venv)$ uvicorn app.main:app --reload # using directly uvicorn ==> old one => before version 0.100.0
+or
+(venv)$ fastapi dev app/main.py # using fastapi CLI ==> after version 0.100.0
 ```
 
 ## User module's API
