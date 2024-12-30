@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from datetime import datetime
 from typing import Optional
-from app.models.user import UserRole
+from app.utils.constant.globals import UserRole
 
 class UserBase(BaseModel):
 	email: str
