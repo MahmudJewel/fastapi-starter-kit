@@ -5,10 +5,6 @@ from app.core.database import Base
 from .common import CommonModel
 from app.utils.constant.globals import UserRole
 
-# class UserRole(str, PythonEnum):
-# 	user = "user"
-# 	admin = "admin"
-
 class User(CommonModel):
 	__tablename__ = "users"
 
