@@ -1,20 +1,20 @@
 # FastAPI Starter Kit
 A professional FastAPI template
 <p>
-    <a href="https://github.com/MahmudJewel/fastapi-starter-kit/fork">
+    <a href="https://github.com/MahmudJewel/fastapi-starter-boilerplate/fork">
         <img src="https://img.shields.io/github/forks/MahmudJewel/fastapi-starter-kit.svg?style=social&label=Fork" />
     </a>
-    <a href="https://github.com/MahmudJewel/fastapi-starter-kit/fork">
+    <a href="https://github.com/MahmudJewel/fastapi-starter-boilerplate/fork">
         <img src="https://img.shields.io/github/stars/MahmudJewel/fastapi-starter-kit.svg?style=social&label=Stars" />
     </a>
-    <a href="https://github.com/MahmudJewel/fastapi-starter-kit/fork">
+    <a href="https://github.com/MahmudJewel/fastapi-starter-boilerplate/fork">
         <img src="https://img.shields.io/nuget/dt/Azylee.Core.svg" />
     </a>
 </p>
 <p>
     If the repo is helpful, please give a star and fork it.
 </p>
-<a href="https://github.com/MahmudJewel/fastapi-starter-kit/fork">
+<a href="https://github.com/MahmudJewel/fastapi-starter-boilerplate/fork">
     Click here to clone/fork the repository
 </a>
 
@@ -97,13 +97,13 @@ A professional FastAPI template
 The first thing to do is to clone the repository:
 
 ```sh
-$ https://github.com/MahmudJewel/fastapi-starter-kit
+$ https://github.com/MahmudJewel/fastapi-starter-boilerplate
 ```
 
 Create a virtual environment to install dependencies in and activate it:
 
 ```sh
-$ cd fastapi-starter-kit
+$ cd fastapi-starter-boilerplate
 $ python -m venv venv
 $ source venv/bin/activate
 ```
@@ -128,9 +128,9 @@ Once `pip` has finished downloading the dependencies:
 (venv)$ alembic upgrade head
 
 # start the server
-(venv)$ uvicorn app.main:app --reload # using directly uvicorn ==> old one => before version 0.100.0
-or
 (venv)$ fastapi dev app/main.py # using fastapi CLI ==> after version 0.100.0
+or
+(venv)$ uvicorn app.main:app --reload # using directly uvicorn ==> old one => before version 0.100.0
 ```
 
 ## User module's API
@@ -169,5 +169,5 @@ or
     python-jose
     alembic
 
-For production level project, Please follow this repo https://github.com/MahmudJewel/fastapi-production-kit
+For production level project, Please follow this repo https://github.com/MahmudJewel/fastapi-production-boilerplate
 ### Happy Coding
