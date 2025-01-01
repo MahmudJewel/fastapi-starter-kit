@@ -1,11 +1,9 @@
 from sqlalchemy import Column, String, Enum
 from enum import Enum as PythonEnum
+
 from app.core.database import Base
 from .common import CommonModel
-
-class UserRole(str, PythonEnum):
-	user = "user"
-	admin = "admin"
+from app.utils.constant.globals import UserRole
 
 class User(CommonModel):
 	__tablename__ = "users"
@@ -14,7 +12,7 @@ class User(CommonModel):
 	password = Column(String)
 	first_name = Column(String, nullable=True)
 	last_name = Column(String, nullable=True)
-	role = Column(Enum(UserRole), default=UserRole.user)
+	role = Column(Enum(UserRole), default=UserRole.USER)
 
 	def __repr__(self):
 		return f"{self.email}"
